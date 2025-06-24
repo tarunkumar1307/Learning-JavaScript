@@ -13,5 +13,5 @@ console.log(college.split(' '))
 
 const url = "https://buntybabli.com/bunty%30bubli"
 console.log(url.replace('%20', "-"))
-console.log(url.includes('bhuri')) // it evaluate to true or false, that whether it is present or not
+console.log(url.includes('bhori')) // it evaluate to true or false, that whether it is present or not
 
