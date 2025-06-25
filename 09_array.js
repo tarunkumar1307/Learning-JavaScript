@@ -1,3 +1,4 @@
+// PART 1
 const arr = [1, 2, 3, 4, 5]
 const arr1 = new Array("Bunty", "Babli", "Petha", "Battak")
 console.log(arr)
@@ -30,6 +31,33 @@ console.log(arr) // 1, 5
 
 /*
 Slice return the trimmed array from starting index to one less then end index that is given, BUT DO NOT affect the original array
-
 Splice return the trimmed array from starting index to end index that is given, and also TRIM from the ORIGINAL ARRAY
 */
+
+console.log("\n------------------------------------------------------\n")
+
+// PART 2
+const prog = ["C++", "Java", "Python", "C#"]
+const web = ["React.js", "Node.js"]
+// prog.push(web)
+// console.log("Push : ", prog) // [ 'C++', 'Java', 'Python', 'C#', [ 'React.js', 'Node.js' ] ]
+
+const prog_web = prog.concat(web) // concat does not make change in arr, it return the new array concatinated
+console.log("Concate : ", prog_web) // [ 'C++', 'Java', 'Python', 'C#', 'React.js', 'Node.js' ]
+
+// best way to concatinate the array with spreading operator
+const prog_web1 = [...prog, ...web]
+console.log("Spreading Operator : ",prog_web1)
+
+// concat only add two array but with spreading operator we can add any numbers of array
+
+const numbers = [1, 2, 3, [4, 5], 6, [7, [8, 9]]]
+const a = numbers.flat(Infinity) // in flat we can give number for the depth to which it should be open
+console.log("Flat Function : ", a);
+
+console.log(Array.isArray("Kirmada"))
+console.log(Array.from("Kirmada"))
+console.log(Array.from({name : "Kachra"})) // empty array will be printed, in this we have to specify that whether we want to make the array with key or with values
+
+let x = 10, y = 20, z = 30
+console.log(Array.of(x, y, z))
