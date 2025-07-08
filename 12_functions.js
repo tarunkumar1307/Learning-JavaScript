@@ -70,3 +70,18 @@ function getArray(arr){
 }
 console.log(getArray(myNewArray))
 console.log(getArray([100, 200, 800, 900, 500])) // directly passing the array
+
+
+
+
+console.log(addOne(3)); // it will be executed successfully
+function addOne(value){
+    return value+1
+}
+console.log(addOne(3)); // it will be executed successfully
+
+console.log(addTwo(3)); // it will not be executed, beacuse here it is like a expression or variable
+const addTwo = function(value){
+    return value+2
+}
+console.log(addTwo(3)); // it will be executed successfully
