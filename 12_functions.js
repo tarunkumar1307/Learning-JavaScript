@@ -73,7 +73,6 @@ console.log(getArray([100, 200, 800, 900, 500])) // directly passing the array
 
 
 
-
 console.log(addOne(3)); // it will be executed successfully
 function addOne(value){
     return value+1
