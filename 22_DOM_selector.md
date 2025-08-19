@@ -1,4 +1,5 @@
-# DOM Selectors
+# DOM (Document Object Model)
+## DOM Selectors
 1. getElementById
 2. getElementsByClassName - it selects all elements with the specified class name, returning a live **HTMLCollection**.
 3. querySelector - it selects only the first matching element
@@ -20,3 +21,15 @@ A NodeList is a collection of nodes returned by certain DOM methods, such as que
 1. textContent - shows all the content in it, hidden also
 2. innerText - shows only the visible content
 3. innerHTML - shows the HTML content inside the tag
+
+## Child Elements - Accessing Child Elements (Parent to Child)
+1. children - returns a live HTMLCollection of child elements
+2. firstElementChild - returns the first child element
+3. lastElementChild - returns the last child element
+
+## Child to Parent
+1. parentElement - returns the parent element
+
+## To Sibling
+1. nextElementSibling - returns the next sibling element
+2. previousElementSibling - returns the previous sibling element
