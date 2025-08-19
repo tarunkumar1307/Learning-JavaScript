@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Element in DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    console.log(div)
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute('title', 'generated title')
+    div.style.backgroundColor = 'green'
+    div.style.padding = "15px"
+    
+    // div.innerHTML = "Texted added to the new Element"
+    const addText = document.createTextNode('Texted added to the new Element') // create a Node
+    div.appendChild(addText) // and then append
+    
+    document.body.appendChild(div)
+</script>
+</html>
