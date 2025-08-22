@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit and Remove Element</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li> Javascript </li>
+    </ul>
+</body>
+<script>
+    // adding any element
+    function addlang(langName){ 
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        // console.log(li.textContent)
+        document.querySelector('.language').appendChild(li)
+    } // this function is not optimized, in this we have to traverse the DOM to the end to add the new element
+    addlang('C++')
+
+    function optiaddlang(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        // li.textContent = `${langName}`
+        console.log(li.textContent);
+        document.querySelector('.language').appendChild(li)
+    } // this function is optimized, it directly appends the text node to the list item
+    optiaddlang('Java')
+    optiaddlang('C#')
+
+
+    // edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang)
+    // secondLang.innerHTML = "Swift"
+    const newli = document.createElement('li')
+    newli.textContent = "Swift"
+    secondLang.replaceWith(newli)
+
+    // edit
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li> TypeScript </li>'
+
+    // remove
+    const thirdLang = document.querySelector("li:last-child")
+    thirdLang.remove()
+</script>
+</html>
