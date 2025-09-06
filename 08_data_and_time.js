@@ -3,6 +3,7 @@ console.log(myDate) // 2025-06-24T15:33:57.573Z
 console.log(`myDate.toString() : ${myDate.toString()}`) // Tue Jun 24 2025 21:04:22 GMT+0530 (India Standard Time)
 console.log(`myDate.toDateString() : ${myDate.toDateString()}`) // Tue Jun 24 2025
 console.log(`myDate.toLocaleString() : ${myDate.toLocaleString()}`) // 24/6/2025, 9:04:22 pm
+console.log(`myDate.toLocaleDateString() : ${myDate.toLocaleDateString()}`) // 24/6/2025
 console.log(`myDate.toLocaleTimeString() : ${myDate.toLocaleTimeString()}`) // 9:04:22 pm
 console.log(`myDate.toTimeString() : ${myDate.toTimeString()}`) // 21:04:22 GMT+0530 (India Standard Time)
 
