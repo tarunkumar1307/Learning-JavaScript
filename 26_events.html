@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+        }  
+
+        img {
+            width: 150px;
+            border-radius: 20px;
+            margin: 10px;
+        }
+
+        li a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Events</h1>
+    <p>Welcome to the events page!</p>
+    <div>
+        <ul id="images">
+            <li><img src="/Image/ant.jpg" alt="Ant" id="ant"></li>
+            <li><img src="/Image/building.jpg" alt="Building" id="building"></li>
+            <li><img src="/Image/fly.jpg" alt="Fly" id="fly"></li>
+            <li><img src="/Image/perfume.jpg" alt="Perfume" id="perfume"></li>
+            <li><img src="/Image/watch.jpg" alt="Watch" id="watch"></li>
+            <li><a href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // type, timestamp, defaultPrevented
+        // target, toElement, srcElement, currentTarget
+        // clientX, clientY, screenX, screenY
+        // altkey, ctrlkey, shiftkey, keyCode
+
+        /*
+        Event Propagation
+        -> Event Bubbling - false (default) {bottom to top OR Inside to Outside}
+        -> Event Capturing - true {top to bottom OR Outside to Inside}
+        */
+
+        // document.querySelector('#images').addEventListener('click', (e) => {
+        //     console.log("Clicked on List");
+        // }, false)
+
+        // document.querySelector('#perfume').addEventListener('click', (e) => {
+        //     console.log("Clicked on Perfume");
+        //     e.stopPropagation(); // stop event bubbling propagation
+        // }, false)
+
+        // document.querySelector('#google').addEventListener('click', (e) => {
+        //     e.preventDefault(); // prevent default action
+        //     e.stopPropagation();
+        //     console.log("Clicked on Google");
+        // })
+
+        document.getElementById('images').addEventListener('click', (e) => {
+            console.log(e.target.tagName);
+            let target = e.target.tagName;
+            if(target === 'IMG'){
+                e.target.parentNode.remove();
+            } 
+        })
+    </script>
+</body>
+
+</html>
