@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <div>
+        <h1>setTimeout</h1>
+        <h2 id="dish-name">Chocolava with Icecream</h2>
+        <button id="stop">Stop</button>
+    </div>
+    <div>
+        <h1>setInterval</h1>
+        <h2 id="time"></h2>
+        <button id="startTime">Start</button>
+        <button id="stopTime">Stop</button>
+    </div>
+    <script>
+        
+        const changeDish = () => {
+            document.getElementById('dish-name').innerText = 'Rasmalai';
+        };
+        const changingName = setTimeout(changeDish, 2000); // this will run after 2 seconds
+        
+        document.getElementById('stop').addEventListener('click', () => {
+            clearTimeout(changingName); // this will stop the timeout if button is clicked
+        });
+        
+
+
+
+        let updatingTime = null;
+
+        document.getElementById('startTime').addEventListener('click', () => {
+            if (!updatingTime) {
+                updatingTime = setInterval(() => {
+                    document.getElementById('time').innerText = new Date().toLocaleTimeString();
+                }, 1000); 
+            }
+        });
+
+        document.getElementById('stopTime').addEventListener('click', () => {
+            clearInterval(updatingTime);
+            updatingTime = null;
+        });
+
+
+    </script>
+</body>
+</html>
