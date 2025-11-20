@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <title>Bind</title>
+</head>
+<body>
+    <button> Click Me </button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "ReactJS";
+            this.server = "http://localhost:3000";
+            
+            // Attach click handler with .bind(this) to preserve context
+            // Without bind, 'this' inside handleClick would refer to the button, not the class
+            document
+                .querySelector("button")
+                .addEventListener("click", this.handleClick.bind(this));
+        }
+
+        handleClick(){
+            console.log("Button Clicked!");
+            // 'this.server' works because bind() locked 'this' to the React instance
+            console.log("Library: " + this.server);
+        }
+    }
+
+    const app = new React();
+</script>
+</html>
+
+<!-- 
+Understanding bind() with Your Example
+The Core Problem
+In JavaScript, when you pass a method to an event listener, this loses its context. Without .bind(this), this inside handleClick() would refer to the button element, not your React class instance.
+
+Simple Definition
+bind(this) glues your method to a specific object — it creates a new function where this always refers to what you tell it to.
+-->
